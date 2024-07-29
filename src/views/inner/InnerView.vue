@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Header from '../../components/Header.vue'
-import Menu from '../../components/Menu.vue'
+import Menu from '../../components/nav/Nav.vue'
 </script>
 
 <template>
@@ -13,7 +13,7 @@ import Menu from '../../components/Menu.vue'
         <el-aside width="260px">
           <Menu />
         </el-aside>
-        <el-main>Main</el-main>
+        <el-main> <RouterView /></el-main>
       </el-container>
     </el-container>
   </div>

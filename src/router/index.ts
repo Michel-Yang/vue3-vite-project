@@ -5,7 +5,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/home'
+      redirect: '/inner'
       // name: 'home',
       // component: HomeView
     },
@@ -18,12 +18,24 @@ const router = createRouter({
     //   component: () => import('../views/AboutView.vue')
     // },
     {
-      path: '/home',
+      path: '/inner',
       name: 'Home',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/inner/InnerView.vue')
+      component: () => import('../views/inner/InnerView.vue'),
+      children:[
+      {
+        path:"vpn",
+         component: () => import('../views/inner/networkManagement/vpn/Index.vue'),
+      },
+      {
+        path:"ngrok",
+         component: () => import('../views/inner/networkManagement/ngrok/Index.vue'),
+      },{
+        path:"wechat",
+         component: () => import('../views/inner/networkManagement/wechat/Index.vue'),
+      }]
     },
     {
       path: '/Login',

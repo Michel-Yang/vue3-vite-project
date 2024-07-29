@@ -29,22 +29,22 @@ const handleLogin = async () => {
     })
   }
 
-  router.push('/home')
+  router.push('/inner')
 }
 </script>
 <template>
   <div class="login">
+    <img src="@/assets/images/logo.png" class="logo" />
     <div class="login-form">
-      <h1>Login</h1>
       <el-form ref="form" :model="loginForm" label-width="80px">
-        <el-form-item label="Username">
+        <el-form-item label="用户名">
           <el-input v-model="loginForm.username"></el-input>
         </el-form-item>
-        <el-form-item label="Password">
+        <el-form-item label="密码">
           <el-input type="password" v-model="loginForm.password"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="handleLogin">Login</el-button>
+          <el-button type="primary" @click="handleLogin" size="large">登录</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -58,6 +58,11 @@ const handleLogin = async () => {
   background-image: url('@/assets/images/login.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  .logo {
+    width: 300px;
+    margin-top: 100px;
+    margin-left: 100px;
+  }
 
   .login-form {
     width: 400px;
